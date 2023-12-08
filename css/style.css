@@ -57,6 +57,414 @@ body {
     font-family:'Poppins-Regular';
 }
 /* ===================================Navbar======================================== */
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+}
+
+/* .wrapper {
+  width: 94%;
+  max-width: 1140px;
+  margin: 0 auto;
+} */
+
+.wrapper-small {
+  max-width: 640px;
+}
+
+.wrapper-flush {
+  display: flex;
+  justify-content: space-between;
+  margin: 0px 80px;
+  padding: 20px 0px;
+}
+
+
+/**
+ * Navigation
+ */
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10000;
+  background-color:grey;
+}
+
+
+/** 
+* Nav container 
+* 1. Ensure this slides in below parent
+* 2. Hide by default
+* 3. Smoother scrolling experience on iOS
+*/
+
+.nav-container {
+  position: fixed;
+  top: 110px;
+  /* 1 */
+  left: 0;
+  z-index: 9999;
+  overflow-y: auto;
+  visibility: hidden;
+  /* 2 */
+  width: 40%;
+  height: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+  transform: translateX(-100%);
+  /* 2 */
+  background-color:#002d71;
+  -webkit-overflow-scrolling: touch;
+  /* 3 */
+}
+
+
+/* 1. Show when `.is-visible` class is added */
+
+.nav-container.is-visible {
+  visibility: visible;
+  /* 1 */
+  transform: translateX(0);
+  /* 1 */
+}
+
+
+/* Nav toggle */
+
+.nav-toggle {
+  line-height: 1;
+  display: inline-block;
+  padding: 1.25rem 1rem;
+  border: 0;
+  background-color:white;
+}
+.nav-toggle:focus {
+  outline: none;
+}
+
+
+/* Nav toggle icon */
+
+.nav-toggle .icon-menu {
+  position: relative;
+  display: inline-block;
+  width: 28px;
+  height: 20px;
+  vertical-align: middle;
+  fill: none;
+}
+
+
+/* Nav toggle icon lines */
+
+.icon-menu .line {
+  position: absolute;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 4px;
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  background-color: #444;
+}
+
+
+/* Nav toggle icon line 1 */
+
+.icon-menu .line-1 {
+  top: 0;
+}
+
+
+/* When active, rotate line 1 to be lefthand part of X */
+
+.is-active .icon-menu .line-1 {
+  transform: translateY(8px) translateX(0) rotate(45deg);
+}
+
+
+/* Nav toggle icon line 2 */
+
+.icon-menu .line-2 {
+  top: 50%;
+  margin-top: -2px;
+}
+
+
+/* When active, hide line 2 */
+
+.is-active .icon-menu .line-2 {
+  opacity: 0;
+}
+
+
+/* Nav toggle icon line 3 */
+
+.icon-menu .line-3 {
+  bottom: 0;
+}
+
+
+/* When active, rotate line 3 to be righthand part of X */
+
+.is-active .icon-menu .line-3 {
+  transform: translateY(-8px) translateX(0) rotate(-45deg);
+}
+
+
+/* Remove default list styles for menus */
+
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+/** 
+* 1. Give menu a lighter background than its container 
+* 2. Prevent menu text from being accidentally highlighted
+*/
+
+.nav-menu {
+  background-color: #002d71;
+  /* color: white; */
+  /* 1 */
+  user-select: none;
+  /* 2 */
+}
+
+
+/* Give menu items a top border */
+
+.nav-menu .menu-item {
+  border-top: 1px solid white;
+}
+
+
+/* Give last menu item a bottom border */
+
+.nav-menu > .menu-item:last-child {
+  border-bottom: 1px solid white;
+}
+
+
+/* Darker background color on hover, and when toggled */
+
+.nav-menu > .menu-item:hover,
+.nav-menu > .menu-item.is-active {
+  background-color: #d0d0d0;
+}
+
+
+/* 1. Menu links are block level, by default */
+
+.nav-menu .menu-link {
+  display: block;
+  /* 1 */
+  text-decoration: none;
+  color: white;
+  padding: 0.75rem 1rem;
+}
+
+
+/* 1. Menu items with dropdowns appear clickable */
+
+.has-dropdown {
+  position: relative;
+  cursor: pointer;
+  /* 1 */
+}
+
+
+/* 1. Parent menu links inlined so you can toggle the dropdown */
+
+.has-dropdown > .menu-link {
+  display: inline-block;
+}
+
+
+/* 1. Add an icon to menu items that have sub menus */
+
+.has-dropdown:after {
+  font-size: 32px;
+  position: absolute;
+  top: 0;
+  right: 1rem;
+  bottom: 0;
+  content: "+";
+  /* 1 */
+  color: white;
+}
+
+
+/* 1. Switch icon to n-dash when toggled */
+
+.has-dropdown.is-active:after {
+  content: "\2013";
+  /* 1 */
+}
+
+
+/**
+ * Dropdowns
+ * 1. Hide dropdowns by default
+ */
+
+.nav-dropdown {
+  display: none;
+  /* 1 */
+  background-color: #c0c0c0;
+}
+
+
+/* 1. Show dropdown when toggled */
+
+.has-dropdown.is-active > .nav-dropdown {
+  display: block;
+  /* 1 */
+}
+
+
+/* 2nd level dropdown */
+
+.nav-dropdown .nav-dropdown {
+  background-color: #aaa;
+}
+
+.nav-dropdown .menu-item {
+  border-color: #a0a0a0;
+}
+
+.nav-dropdown .nav-dropdown .menu-item {
+  background-color: #b0b0b0;
+  border-color: #909090;
+}
+
+
+/* Main content area */
+
+.content {
+  margin-top: 60px;
+}
+
+.content .wrapper {
+  padding: 1rem 0;
+}
+.nav {
+    background-color:white;
+    display: block;
+  }
+@media (min-width: 992px) {
+  .nav {
+    background-color:grey;
+    display: none;
+  }
+  .nav,
+  .nav-container,
+  .nav-container.is-visible {
+    position: static;
+    top: auto;
+    left: auto;
+    z-index: auto;
+    transform: translateX(0);
+  }
+  .nav-container,
+  .nav-container.is-visible {
+    visibility: visible;
+    height: auto;
+    min-height: 0;
+    overflow-y: visible;
+  }
+  .nav-toggle {
+    display: none;
+  }
+  /* 1. Display menu items inline */
+  .nav-menu > .menu-item,
+  .nav-menu > .menu-item.is-active {
+    display: inline-block;
+    /* 1 */
+    background-color: transparent;
+    border: 0;
+  }
+  /* Remove bottom border on last child */
+  .nav-menu > .menu-item:last-child {
+    border: 0;
+  }
+  .nav-menu .menu-item {
+    transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+  }
+  /* Remove +/- icons */
+  .has-dropdown:after {
+    content: "" !important;
+  }
+  /* Add a caret to top-level menu items that have dropdowns */
+  .nav-menu > .has-dropdown:after {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    width: 0;
+    height: 0;
+    margin-top: -2px;
+    margin-left: -4px;
+    content: "";
+    border-width: 5px 5px 0 5px;
+    border-style: solid;
+    border-color: #444 transparent transparent transparent;
+  }
+  /* Increase padding to compensate for caret */
+  .has-dropdown > .menu-link {
+    padding-right: 2rem;
+  }
+  /* Re-style dropdowns for larger screens */
+  .nav-dropdown {
+    display: block;
+    opacity: 0;
+    position: absolute;
+    top: 100%;
+    width: 200px;
+    margin: 0;
+    padding: 0.5rem 0;
+    background-color:#002d71;
+    box-shadow: 0 0 4px hsla(0, 0%, 0%, 0.15);
+    visibility: hidden;
+    transition: visibility 0s linear 0.25s, opacity 0.25s linear;
+  }
+  .has-dropdown:hover > .nav-dropdown {
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0s;
+  }
+  .nav-dropdown .menu-item {
+    border: 0;
+  }
+  .nav-dropdown .menu-item:hover,
+  .nav-dropdown .nav-dropdown .menu-item:hover {
+    background-color: #d0d0d0;
+  }
+  .nav-dropdown .nav-dropdown,
+  .nav-dropdown .nav-dropdown .menu-item {
+    background-color: #dedede;
+  }
+  .nav-dropdown .nav-dropdown {
+    z-index: 9998;
+    top: 0;
+    left: 100%;
+  }
+  .content {
+    margin-top: 0;
+  }
+}
 #navbar {
     background-color: white;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -1027,6 +1435,160 @@ body {
 #footer .footer-content .footer-blue{
     color: #002d71;
 }
+/* =========================================================================  */
+
+.tab-sel  {
+    display: none;
+  }
+.tab-sel select {
+    font-size: 16px;
+  }
+  
+  .tab-sel .boatStyleTable {
+    width: 100%;
+    display: none;
+    text-align: center;
+    border-collapse: collapse;
+    margin: 10px 0px;
+  }
+  .tab-sel .slick-carousel{
+      display: flex;
+      width: 92%;
+      margin: 0px auto;
+      position: relative;
+  }
+  .tab-sel .slick{
+      width: 50%;
+  }
+  .tab-sel .slick .your-classone {
+      width:98%;
+      height: 430px;
+  }
+  .tab-sel .slick .your-classone img{
+      width:100%;
+      height: 430px;
+      object-fit: cover;
+  }
+  .tab-sel .slick .your-classtwo {
+      width:98% ;
+      height: 120px;
+      margin-top: 10px;
+  }
+  .tab-sel .slick .your-classtwo img{
+      width:98%;
+      height: 120px;
+  }
+  .tab-sel .slick .your-classonee {
+      width:98%;
+      height: 430px;
+  }
+  .tab-sel .slick .your-classonee img{
+      width:100%;
+      height: 430px;
+  }
+  .tab-sel .slick .your-classtwoo {
+      width:98% ;
+      height: 120px;
+      margin-top: 10px;
+  }
+  .tab-sel .slick .your-classtwoo img{
+      width:98%;
+      height: 120px;
+  }
+  .tab-sel .left-arrow{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 200px;
+      width: 35px;
+      height: 35px;
+      background-color: #002d71;
+      position: absolute;
+      z-index: 999;
+      top: 200px;
+      left: -20px;
+  }
+  .tab-sel .right-arrow{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 200px;
+      width: 35px;
+      height: 35px;
+      background-color: #002d71;
+      position: absolute;
+      z-index: 999;
+      top: 200px;
+      right: -20px;
+  }
+  .tab-sel svg{
+      color: white;
+      font-size: 20px;
+  }
+  .tab-sel .slick-content{
+      width: 50%;
+      padding-left: 45px;
+      padding-right: 120px;
+  }
+  .tab-sel .slick-content h2{
+      font-size: 40px;
+      font-family: Poppins-light;
+  }
+  .tab-sel .slick-content h3{
+      font-size: 16px;
+      font-family: Poppins-medium;
+      padding: 20px 0px;
+      line-height: 25px;
+  }
+  .tab-sel .slick-content p {
+     font-size: 17px;
+     font-family: Poppins-medium;
+     width: 300px;
+     border-bottom: 1px solid #b1b1b1;
+     padding-bottom: 15px;
+  }
+  .tab-sel .slick-content p img{
+      width: 40px;
+      margin-right:30px;
+  }
+  .tab-sel .slick-content .aone{
+      font-size: 17px;
+      font-family: Poppins-medium;
+      border-bottom: 1px solid #b1b1b1;
+      padding-bottom: 15px;
+      color: black ;
+   }
+  .tab-sel .slick-content .aone:hover{
+      text-decoration: none;
+  }
+  .tab-sel .slick-content .atwo{
+      font-size: 17px;
+      font-family: Poppins-medium;
+      border: 1px solid #b1b1b1;
+      color: black ;
+      margin-top: 50px;
+      display: inline-block;
+      padding: 10px 15px;
+   }
+  .tab-sel .slick-content .atwoo{
+      font-size: 17px;
+      font-family: Poppins-medium;
+      border: 1px solid #b1b1b1;
+      color: #002d71 ;
+      margin-top: 50px;
+      display: inline-block;
+      padding: 10px 15px;
+   }
+  .tab-sel .slick-content .atwo:hover{
+      background-color: #002d71;
+      color: white ;
+      text-decoration: none;
+   }
+  .tab-sel .slick-content .atwoo:hover{
+      background-color: #002d71;
+      color: white ;
+      text-decoration: none;
+   }
 /* ================================================================== */
 @media (max-width: 5120px) {
     .container-new-big {
@@ -1213,22 +1775,12 @@ body {
     }
     /* ---------------------------------------------  */
 
-    #amenities{
-        display: ;
-    }
     /* ---------------------------------------------  */
 
-    #facilities{
-        display: ;
-    }
     /* ---------------------------------------------  */
-    #hotel{
-        display: ;
-    }
+
     /* ---------------------------------------------  */
-    #gallery{
-        display: ;
-    }
+ 
     #gallery  .left-arrow{
         display: flex;
         justify-content: center;
@@ -1243,9 +1795,7 @@ body {
         left: -20px;
     }
     /* ---------------------------------------------  */
-    #explore{
-        display: ;
-    }
+
     #explore .explore-content{
         background-color: #002d71;
         color: white;
@@ -1257,9 +1807,7 @@ body {
         margin: 30px 0px;
     }
     /* ---------------------------------------------  */
-    #review{
-        display: ;
-    }
+ 
     /* ---------------------------------------------  */
     #sent{
         margin: 30px 0px;
@@ -1271,9 +1819,7 @@ body {
         border-bottom: #b1b1b1 solid 1px;
     }
     /* ---------------------------------------------  */
-    #footer{
-        display: ;
-    }
+ 
 }
 /* --------------------------------------------------------------- */
 @media(max-width:1180px) {
@@ -1685,9 +2231,13 @@ body {
 }
 
 @media(max-width:991px) {
+    .tab-sel  {
+        display: block;
+      }
     #navbar .navbar{
         margin: 0px 0px 0px 30px;
         padding: 15px 30px 15px 30px;
+        display: none;
     }
     #navbar  .top{
         display: none;
@@ -1779,7 +2329,7 @@ body {
         height: 50px;
         display: block;
     }
-    #tab .nav {
+    #tab .tabs {
         display: none;
     }
     #tab  .slick-carousel{
@@ -1913,6 +2463,55 @@ body {
     #attractions .att .item .att-img{
         width: 60px;
         margin: 0px auto;
+    }
+    /* =====  */
+    #tab   .slick-carousel{
+        display: flex;
+        width: 92%;
+        margin: 0px auto;
+        position: relative;
+        flex-direction: column;
+    }
+    #tab  .slick-content{
+        width: 100%;
+        padding: 20px 20px;
+    }
+    #tab  .slick{
+        width: 100% ;
+    }
+    #tab  .slick-content p {
+       font-size: 17px;
+       font-family: Poppins-medium;
+       width: 100%;
+       border-bottom: 1px solid #b1b1b1;
+       padding-bottom: 15px;
+       text-align: left;
+    }
+    #tab  .tab-sel {
+        width: 92%;
+        margin: 0px auto;
+    }
+    #tab  .tab-sel select{
+        width: 100%;
+        height: 50px;
+    }
+    #tab  .slick .your-classone {
+        width:100%;
+        height: 430px;
+    }
+    #tab  .slick .your-classone img{
+        width:100%;
+        height: 430px;
+        object-fit: cover;
+    }
+    #tab  .slick .your-classtwo {
+        width:100% ;
+        height: 120px;
+        margin-top: 10px;
+    }
+    #tab  .slick .your-classtwo img{
+        width:98%;
+        height: 120px;
     }
 }
 
@@ -2076,6 +2675,61 @@ body {
     #navbar .navbar-toggler {
         margin-right: 10px;
     }
+    /* =====  */
+    #tab   .slick-content p {
+        font-size: 17px;
+        font-family: Poppins-medium;
+        width: 100%;
+        border-bottom: 1px solid #b1b1b1;
+        padding-bottom: 15px;
+        text-align: center;
+     }
+     #tab  .slick .your-classone {
+         width:100%;
+         height: 300px;
+     }
+     #tab  .slick .your-classone img{
+         width:100%;
+         height: 300px;
+         object-fit: cover;
+     }
+     #tab  .slick .your-classtwo {
+       display: none;
+     }
+     #tab  .slick .your-classtwo img{
+         display: none;
+     }
+     #tab  .left-arrow{
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         border-radius: 200px;
+         width: 35px;
+         height: 35px;
+         background-color: #002d71;
+         position: absolute;
+         z-index: 999;
+         top: 130px;
+         left: 10px;
+     }
+      #tab  .right-arrow{
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         border-radius: 200px;
+         width: 35px;
+         height: 35px;
+         background-color: #002d71;
+         position: absolute;
+         z-index: 999;
+         top: 130px;
+         right: 10px;
+     }
+     #tab  .slick-content{
+         width: 100%;
+         padding: 20px 20px;
+     }
+     
 }
 
 @media(max-width:431px) {
@@ -2161,6 +2815,75 @@ body {
         font-family: Poppins-Regular;
         text-align: center;
         margin: 0px 30px;
+    }
+    /* =====  */
+    #tab   .slick-content .aone{
+        font-size: 17px;
+        font-family: Poppins-medium;
+        border-bottom: 1px solid #b1b1b1;
+        padding-bottom: 15px;
+        color: black ;
+     }
+    #tab   .slick-content .atwo{
+        font-size: 17px;
+        font-family: Poppins-medium;
+        border: 1px solid #b1b1b1;
+        color: black ;
+        margin-top: 50px;
+        display: inline-block;
+        padding: 10px 15px;
+     }
+    #tab   .slick-content .atwoo{
+        font-size: 17px;
+        font-family: Poppins-medium;
+        border: 1px solid #b1b1b1;
+        color: #002d71 ;
+        margin-top: 10px;
+        display: inline-block;
+        padding: 10px 15px;
+     }
+    #tab   .slick-content{
+        width: 100%;
+        padding: 20px 0px;
+    }
+    #tab  .slick-content h2{
+        font-size: 35px;
+        font-family: Poppins-light;
+    }
+    #tab   .slick .your-classone {
+        width:100%;
+        height: 250px;
+    }
+    #tab  .slick .your-classone img{
+        width:100%;
+        height: 250px;
+        object-fit: cover;
+    }
+    #tab  .left-arrow{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 200px;
+        width: 35px;
+        height: 35px;
+        background-color: #002d71;
+        position: absolute;
+        z-index: 999;
+        top: 100px;
+        left: 10px;
+    }
+    #tab   .right-arrow{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 200px;
+        width: 35px;
+        height: 35px;
+        background-color: #002d71;
+        position: absolute;
+        z-index: 999;
+        top: 100px;
+        right: 10px;
     }
     
 }
@@ -2484,5 +3207,6 @@ body {
 /* 391  */
 /* 370  */
 /* 363 */
+/* 320  */
 
 /* ---------------- */

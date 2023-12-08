@@ -27,6 +27,65 @@
 <body>
     <!-- ===================================Navbar======================================== -->
     <section id="navbar">
+        <!-- ======  -->
+        <nav class="nav is-fixed" role="navigation">
+          <div class="wrapper wrapper-flush">
+            <a class="navbar-brand" href="#"><img src="images/logo (1).webp" alt=""></a>
+            <button class="nav-toggle">
+              <div class="icon-menu">
+                  <span class="line line-1"></span>
+                  <span class="line line-2"></span>
+                  <span class="line line-3"></span>
+              </div>
+            </button>
+            <div class="nav-container">
+              <ul class="nav-menu menu">
+                <li class="menu-item">
+                  <a href="#carousel" class="menu-link">Overview</a>
+                </li>
+                <li class="menu-item">
+                  <a href="#tab" class="menu-link">Rooms</a>
+                </li>
+                <li class="menu-item">
+                  <a href="#amenities" class="menu-link">Amenities</a>
+                </li>
+                <li class="menu-item has-dropdown">
+                  <a href="#!" class="menu-link">Area Guide</a>
+                  <ul class="nav-dropdown menu">
+                    <li class="menu-item"><a href="#!" class="menu-link">Attractions</a></li>
+                    <li class="menu-item"><a href="#!" class="menu-link">Recommended</a></li>
+                  </ul>
+                </li>
+                <li class="menu-item">
+                  <a href="#hotel" class="menu-link">Hotel Info</a>
+                </li>
+                <li class="menu-item">
+                  <a href="#gallery" class="menu-link">Gallery</a>
+                </li>
+                <li class="menu-item has-dropdown">
+                  <a href="#!" class="menu-link">Directory</a>
+                  <ul class="nav-dropdown menu">
+                    <li class="menu-item"><a href="#!" class="menu-link">Welcome</a></li>
+                    <li class="menu-item"><a href="#!" class="menu-link">Guest Services</a></li>
+                    <li class="menu-item"><a href="#!" class="menu-link">Breakfast</a></li>
+                    <li class="menu-item"><a href="#!" class="menu-link">TV channels</a></li>
+                    <li class="menu-item"><a href="#!" class="menu-link">Dailing Instructions</a></li>
+                    <li class="menu-item"><a href="#!" class="menu-link">Floor Plan</a></li>
+                    <li class="menu-item"><a href="#!" class="menu-link">Safety Tips </a></li>
+                    <li class="menu-item"><a href="#!" class="menu-link">Holy Bible </a></li>
+                    <li class="menu-item"><a href="#!" class="menu-link">Bhagavad-Gita </a></li>
+                    <li class="menu-item"><a href="#!" class="menu-link">Quran </a></li>
+                  </ul>
+                </li>
+                <li class="menu-item">
+                  <a href="#footer" class="menu-link">Contact</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <!-- ======  -->
+
         <nav class="navbar navbar-expand-lg navbar-light ">
             <a class="navbar-brand" href="#"><img src="images/logo (1).webp" alt=""></a>
             <p class="navbar-brandtwo">Holiday Inn Express & Suites <br>Pineville-Alexandria</p>
@@ -151,15 +210,212 @@
             <h3 >Luxury At Ease</h3>
             <p>Our premium guest rooms offer elegant comfort with sophisticated furnishings and modern amenities. Enjoy a serene and luxurious stay in the heart of Pineville.</p>
         </div>
-        <select name="" id="selectt">        
-          <option value="selectt-one">1 King Bed Standard</option>
-          <option value="selectt-one">1 King Bed Standard Microwave</option>
-          <option value="selectt-one">Standard Room</option>
-          <option value="selectt-one">2 Queen Beds Standard</option>
-          <option value="selectt-one">1 King Bed Suit</option>
-          <option value="selectt-one">2 Queen Beds Suit</option>
-          <option value="selectt-one">All Rooms</option>
-        </select>
+        <!-- ===================================== -->
+        <div class="tab-sel">
+          <select onchange="displayBoatBiminiInfo(this.value)" id="t">
+                  <option id="onee" value="" style="display: none;" >Select Your Room</option>
+            <option id="one" value="a" >1 King Bed Standard</option>
+            <option id="two" value="ab">1 King Bed Standard Microwave</option>
+            <option id="three" value="abc">Standard Room</option>
+            <option id="four" value="abcd">2 Queen Beds Standard</option>
+            <option id="five" value="abcde">1 King Bed Suite</option>
+            <option id="six" value="abcdef">2 Queen Beds Suite</option>
+          </select>
+          
+      <!-- -------------------------------  -->
+            <div class=" boatStyleTable" id="a">
+                      <div class="slick-carousel">
+                          <div class="slick">
+                              <div class="your-classone">
+                                  <div><img src="images/king-1.webp" alt=""></div>
+                                  <div><img src="images/king-2.webp" alt=""></div>
+                                  <div><img src="images/king-1.webp" alt=""></div>
+                                  <div><img src="images/king-2.webp" alt=""></div>
+                                  <div><img src="images/king-1.webp" alt=""></div>
+                                  <div><img src="images/king-2.webp" alt=""></div>
+                              </div>
+                              <div class="your-classtwo">
+                                  <div><img src="images/king-1.webp" alt=""></div>
+                                  <div><img src="images/king-2.webp" alt=""></div>
+                                  <div><img src="images/king-1.webp" alt=""></div>
+                                  <div><img src="images/king-2.webp" alt=""></div>
+                                  <div><img src="images/king-1.webp" alt=""></div>
+                                  <div><img src="images/king-2.webp" alt=""></div>
+                              </div>
+                          </div>
+                          <div class="slick-content">
+                              <h2>1 King Bed Standard</h2>
+                              <h3>Experience relaxation in our 1 King Bed Standard room, featuring a plush king-sized bed and a range of thoughtful amenities for a comfortable stay.</h3>
+                              <p><img src="images/smoking.webp"  alt="">SMOKE-FREE ROOMS</p>
+                              <p><img src="images/wifi.webp"  alt="">WI-FI</p>
+                              <p><img src="images/parking.webp"  alt="">Parking</p>
+                              <a href="#" class="aone">+ 12 Additional Amenities</a>
+                              <h4  class="tab-new"><a class="atwo">Room Amenities </a><a class="atwo">Gallery </a><a class="atwoo">More Details </a> </h4>
+                          </div>
+                         </div>
+                  </div>
+      <!-- -------------------------------  -->
+                <div class="boatStyleTable"  id="ab">
+                  <div class="slick-carousel">
+                      <div class="slick">
+                          <div class="your-classone">
+                              <div><img src="images/king-1.webp" alt=""></div>
+                              <div><img src="images/king-2.webp" alt=""></div>
+                              <div><img src="images/king-1.webp" alt=""></div>
+                              <div><img src="images/king-2.webp" alt=""></div>
+                              <div><img src="images/king-1.webp" alt=""></div>
+                              <div><img src="images/king-2.webp" alt=""></div>
+                          </div>
+                          <div class="your-classtwo">
+                              <div><img src="images/king-1.webp" alt=""></div>
+                              <div><img src="images/king-2.webp" alt=""></div>
+                              <div><img src="images/king-1.webp" alt=""></div>
+                              <div><img src="images/king-2.webp" alt=""></div>
+                              <div><img src="images/king-1.webp" alt=""></div>
+                              <div><img src="images/king-2.webp" alt=""></div>
+                          </div>
+                      </div>
+                      <div class="slick-content">
+                          <h2>1 King Bed Standard Microwave</h2>
+                          <h3>Our 1 King Bed Standard room with a microwave provides the added convenience of in-room meal preparation, coupled with a comfortable king-sized bed and essential amenities.</h3>
+                          <p><img src="images/smoking.webp"  alt="">SMOKE-FREE ROOMS</p>
+                          <p><img src="images/wifi.webp"  alt="">WI-FI</p>
+                          <p><img src="images/parking.webp"  alt="">Parking</p>
+                          <a href="#" class="aone">+ 12 Additional Amenities</a>
+                          <h4 class="tab-new"><a class="atwo">Room Amenities </a><a class="atwo">Gallery </a><a class="atwoo">More Details </a> </h4>
+                      </div>
+                     </div>
+                </div>
+                     <!-- ------------------ -->
+                 <div class=" boatStyleTable"  id="abc">
+                  <div class="slick-carousel">
+                      <div class="slick">
+                          <div class="your-classone">
+                              <div><img src="images/king-1.webp" alt=""></div>
+                              <div><img src="images/king-2.webp" alt=""></div>
+                              <div><img src="images/king-1.webp" alt=""></div>
+                              <div><img src="images/king-2.webp" alt=""></div>
+                              <div><img src="images/king-1.webp" alt=""></div>
+                              <div><img src="images/king-2.webp" alt=""></div>
+                          </div>
+                          <div class="your-classtwo">
+                              <div><img src="images/king-1.webp" alt=""></div>
+                              <div><img src="images/king-2.webp" alt=""></div>
+                              <div><img src="images/king-1.webp" alt=""></div>
+                              <div><img src="images/king-2.webp" alt=""></div>
+                              <div><img src="images/king-1.webp" alt=""></div>
+                              <div><img src="images/king-2.webp" alt=""></div>
+                          </div>
+                      </div>
+                      <div class="slick-content">
+                          <h2>Standard Room</h2>
+                          <h3>Our Standard Room offers a blend of comfort and functionality, perfect for travelers looking for a cozy and efficient space to unwind.</h3>
+                          <p><img src="images/smoking.webp"  alt="">SMOKE-FREE ROOMS</p>
+                          <p><img src="images/wifi.webp"  alt="">WI-FI</p>
+                          <p><img src="images/parking.webp"  alt="">Parking</p>
+                          <a href="#" class="aone">+ 12 Additional Amenities</a>
+                          <h4><a class="atwo">Room Amenities </a><a class="atwo">Gallery </a><a class="atwoo">More Details </a> </h4>
+                      </div>
+                     </div>
+                 </div>
+                     <!-- ----------------  -->
+              <div class=" boatStyleTable" id="abcd">
+                  <div class="slick-carousel">
+                      <div class="slick">
+                          <div class="your-classone">
+                              <div><img src="images/king-1.webp" alt=""></div>
+                              <div><img src="images/king-2.webp" alt=""></div>
+                              <div><img src="images/king-1.webp" alt=""></div>
+                              <div><img src="images/king-2.webp" alt=""></div>
+                              <div><img src="images/king-1.webp" alt=""></div>
+                              <div><img src="images/king-2.webp" alt=""></div>
+                          </div>
+                          <div class="your-classtwo">
+                              <div><img src="images/king-1.webp" alt=""></div>
+                              <div><img src="images/king-2.webp" alt=""></div>
+                              <div><img src="images/king-1.webp" alt=""></div>
+                              <div><img src="images/king-2.webp" alt=""></div>
+                              <div><img src="images/king-1.webp" alt=""></div>
+                              <div><img src="images/king-2.webp" alt=""></div>
+                          </div>
+                      </div>
+                      <div class="slick-content">
+                          <h2>2 Queen Beds Standard</h2>
+                          <h3>Ideal for families or groups, this room features two queen-sized beds and is equipped with all the necessary amenities for a pleasant and relaxing stay.</h3>
+                          <p><img src="images/smoking.webp"  alt="">SMOKE-FREE ROOMS</p>
+                          <p><img src="images/wifi.webp"  alt="">WI-FI</p>
+                          <p><img src="images/parking.webp"  alt="">Parking</p>
+                          <a href="#" class="aone">+ 12 Additional Amenities</a>
+                          <h4><a class="atwo">Room Amenities </a><a class="atwo">Gallery </a><a class="atwoo">More Details </a> </h4>
+                      </div>
+                     </div>
+              </div>
+                 <!-- ------------------  -->
+             <div class="boatStyleTable" id="abcde">
+              <div class="slick-carousel ">
+                  <div class="slick">
+                      <div class="your-classone">
+                          <div><img src="images/king-1.webp" alt=""></div>
+                          <div><img src="images/king-2.webp" alt=""></div>
+                          <div><img src="images/king-1.webp" alt=""></div>
+                          <div><img src="images/king-2.webp" alt=""></div>
+                          <div><img src="images/king-1.webp" alt=""></div>
+                          <div><img src="images/king-2.webp" alt=""></div>
+                      </div>
+                      <div class="your-classtwo">
+                          <div><img src="images/king-1.webp" alt=""></div>
+                          <div><img src="images/king-2.webp" alt=""></div>
+                          <div><img src="images/king-1.webp" alt=""></div>
+                          <div><img src="images/king-2.webp" alt=""></div>
+                          <div><img src="images/king-1.webp" alt=""></div>
+                          <div><img src="images/king-2.webp" alt=""></div>
+                      </div>
+                  </div>
+                  <div class="slick-content">
+                      <h2>1 King Bed Suite</h2>
+                      <h3>Elevate your stay in our 1 King Bed Suite, a spacious and luxurious option featuring a separate living area, king-sized bed, and premium amenities for ultimate comfort.</h3>
+                      <p><img src="images/smoking.webp"  alt="">SMOKE-FREE ROOMS</p>
+                      <p><img src="images/wifi.webp"  alt="">WI-FI</p>
+                      <p><img src="images/parking.webp"  alt="">Parking</p>
+                      <a href="#" class="aone">+ 12 Additional Amenities</a>
+                      <h4><a class="atwo">Room Amenities </a><a class="atwo">Gallery </a><a class="atwoo">More Details </a> </h4>
+                  </div>
+                 </div>
+             </div>
+                 <!-- ---------------------  -->
+                 <div class="boatStyleTable" id="abcdef">
+                  <div class="slick-carousel ">
+                      <div class="slick">
+                          <div class="your-classone">
+                              <div><img src="images/king-1.webp" alt=""></div>
+                              <div><img src="images/king-2.webp" alt=""></div>
+                              <div><img src="images/king-1.webp" alt=""></div>
+                              <div><img src="images/king-2.webp" alt=""></div>
+                              <div><img src="images/king-1.webp" alt=""></div>
+                              <div><img src="images/king-2.webp" alt=""></div>
+                          </div>
+                          <div class="your-classtwo">
+                              <div><img src="images/king-1.webp" alt=""></div>
+                              <div><img src="images/king-2.webp" alt=""></div>
+                              <div><img src="images/king-1.webp" alt=""></div>
+                              <div><img src="images/king-2.webp" alt=""></div>
+                              <div><img src="images/king-1.webp" alt=""></div>
+                              <div><img src="images/king-2.webp" alt=""></div>
+                          </div>
+                      </div>
+                      <div class="slick-content">
+                          <h2>2 Queen Beds Suite</h2>
+                          <h3>Our 2 Queen Beds Suite is perfect for larger groups, offering two queen-sized beds, ample space, and a range of deluxe amenities to enhance your stay.</h3>
+                          <p><img src="images/smoking.webp"  alt="">SMOKE-FREE ROOMS</p>
+                          <p><img src="images/wifi.webp"  alt="">WI-FI</p>
+                          <p><img src="images/parking.webp"  alt="">Parking</p>
+                          <a href="#" class="aone">+ 12 Additional Amenities</a>
+                          <h4><a class="atwo">Room Amenities </a><a class="atwo">Gallery </a><a class="atwoo">More Details </a> </h4>
+                      </div>
+                     </div>
+                 </div>
+        </div>
+        <!-- ===================================== -->
         <div class="tabs">
             <ul class="nav nav-tabs" id="myTab" role="tablist">
                 <li class="nav-item" role="presentation">
@@ -997,6 +1253,53 @@
         }
     }
 })
+    </script>
+    
+    <script>
+      function displayBoatBiminiInfo(boatType) {
+    var alphabet = "abcdefghijklmnopqrstuvwxyz";
+    document.getElementById(boatType).style.display = 'flex';
+      for (i = 1; i < boatType.length; i++) {
+        document.getElementById(alphabet.substring(0, i)).style.display = 'none';
+      }
+      for (i = boatType.length + 1; i < 26; i++) {
+        document.getElementById(alphabet.substring(0, i)).style.display = 'none';
+      }
+  }
+  </script>
+    <script>
+      $("#t").click(function () {
+        $('.your-classone').slick('refresh');
+        $('.your-classtwo').slick('refresh');
+      });
+    </script>
+    <script>
+      $(function() {
+    var html = $('html, body'),
+        navContainer = $('.nav-container'),
+        navToggle = $('.nav-toggle'),
+        navDropdownToggle = $('.has-dropdown');
+
+    // Nav toggle
+    navToggle.on('click', function(e) {
+        var $this = $(this);
+        e.preventDefault();
+        $this.toggleClass('is-active');
+        navContainer.toggleClass('is-visible');
+        html.toggleClass('nav-open');
+    });
+  
+    // Nav dropdown toggle
+    navDropdownToggle.on('click', function() {
+        var $this = $(this);
+        $this.toggleClass('is-active').children('ul').toggleClass('is-visible');
+    });
+  
+    // Prevent click events from firing on children of navDropdownToggle
+    navDropdownToggle.on('click', '*', function(e) {
+        e.stopPropagation();
+    });
+});
     </script>
 </body>
 
