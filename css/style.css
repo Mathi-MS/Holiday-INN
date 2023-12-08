@@ -1451,6 +1451,9 @@ html {
     border-collapse: collapse;
     margin: 10px 0px;
   }
+  .tab-sel #a {
+    display: flex;
+  }
   .tab-sel .slick-carousel{
       display: flex;
       width: 92%;
@@ -2829,7 +2832,7 @@ html {
         font-family: Poppins-medium;
         border: 1px solid #b1b1b1;
         color: black ;
-        margin-top: 50px;
+        margin-top: 10px;
         display: inline-block;
         padding: 10px 15px;
      }
