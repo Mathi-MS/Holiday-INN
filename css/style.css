@@ -80,7 +80,7 @@ html {
 .wrapper-flush {
   display: flex;
   justify-content: space-between;
-  margin: 0px 80px;
+  margin: 0px 20px;
   padding: 20px 0px;
 }
 
@@ -89,7 +89,7 @@ html {
  * Navigation
  */
 
-.nav {
+ .is-fixed {
   position: fixed;
   top: 0;
   left: 0;
@@ -115,7 +115,7 @@ html {
   overflow-y: auto;
   visibility: hidden;
   /* 2 */
-  width: 40%;
+  width: 70%;
   height: 100%;
   min-height: 100%;
   margin: 0;
@@ -366,7 +366,7 @@ html {
     display: block;
   }
 @media (min-width: 992px) {
-  .nav {
+  .is-fixed {
     background-color:grey;
     display: none;
   }
