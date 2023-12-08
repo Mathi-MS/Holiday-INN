@@ -857,9 +857,7 @@ html {
     display: none;
 }
 /* ========================Amenities========================= */
-#amenities{
-    
-}
+
 #amenities h2{
     text-align: center;
     font-family: Poppins-Regular;
@@ -1356,9 +1354,7 @@ html {
     box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
 }
 /* ==============================Footer============================== */
-#footer{
-    
-}
+
 #footer .footer-content {
     display: flex;
     flex-direction: column;
@@ -1743,11 +1739,6 @@ html {
         padding: 5px 12px;
     }
     /* ---------------------------------------------  */
-    #carousel{
-        
-    }
-    /* ---------------------------------------------  */
-
     #content{
         padding: 20px 0px;
     }
@@ -1866,8 +1857,6 @@ html {
 }
 /* --------------------------------------------------------------------------------------- */
 @media(max-width:1112px) {
-    #navbar{
-    }
     #navbar .navbar{
         margin: 0px 0px 0px 60px;
         padding: 20px 0px;
@@ -1994,9 +1983,6 @@ html {
         font-size: 11px;
         font-family: Poppins-SemiBold;
         padding: 5px;
-    }
-    #navbar  img{
-
     }
     #navbar  .check{
         color: #002d71;
